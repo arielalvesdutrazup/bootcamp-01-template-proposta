@@ -86,11 +86,11 @@
 			<artifactId>spring-security-oauth2-jose</artifactId>
 		</dependency>
 
-<!--		&lt;!&ndash; Prometheus &ndash;&gt;-->
-<!--		<dependency>-->
-<!--			<groupId>io.micrometer</groupId>-->
-<!--			<artifactId>micrometer-registry-prometheus</artifactId>-->
-<!--		</dependency>-->
+		<!-- Prometheus -->
+		<dependency>
+			<groupId>io.micrometer</groupId>
+			<artifactId>micrometer-registry-prometheus</artifactId>
+		</dependency>
 
 <!--		&lt;!&ndash; Jaeger &ndash;&gt;-->
 <!--		<dependency>-->
