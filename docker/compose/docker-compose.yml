@@ -34,6 +34,17 @@ services:
       POSTGRES_DB: keycloak
       POSTGRES_HOST: postgres
 
+  propostas-db:
+    image: 'postgres:alpine'
+    volumes:
+      - propostas-db-volume:/var/lib/postgresql/data
+    ports:
+      - 5433:5432
+    environment:
+      POSTGRES_USER: propostas
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: dev_proposta
+
   keycloak:
     image: jboss/keycloak
     ports:
@@ -90,6 +101,20 @@ services:
       LOG_LEVEL: INFO
       KAFKA_HOST: "kafka:29092"
 
+#  propostas:
+#    image: arielalvesdutra/propostas
+#    ports:
+#      - 8081:8080
+#    environment:
+#      SERVER_PORT: 8080
+#      ANALISE_URL: http://localhost:9999
+#      CARTAO_URL: http://localhost:8888
+##      ANALISE_URL: analise
+##      CARTAO_URL: cartao
+#    depends_on:
+#      - keycloak
+#      - propostas-db
+
   jaeger:
     image: jaegertracing/all-in-one
     ports:
@@ -138,3 +163,4 @@ volumes:
   grafana-volume:
   prometheus-volume:
   postgres-volume:
+  propostas-db-volume:

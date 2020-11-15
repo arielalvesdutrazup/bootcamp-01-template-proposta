@@ -17,6 +17,7 @@ public class SegurancaConfiguracao extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
+                .antMatchers(GET, "/").permitAll()
                 .antMatchers(GET, "/actuator/**").permitAll()
                 .antMatchers(GET, "/api/cartoes/**").hasAuthority("SCOPE_cartoes:read")
                 .antMatchers(GET, "/api/propostas/**").hasAuthority("SCOPE_propostas:read")

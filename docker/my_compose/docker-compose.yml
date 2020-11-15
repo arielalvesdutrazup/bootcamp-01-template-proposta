@@ -1,0 +1,33 @@
+version: '3'
+services:
+
+#
+#  propostas-db:
+#    image: 'postgres:alpine'
+#    volumes:
+#      - propostas-db-volume:/var/lib/postgresql/data
+#    ports:
+#      - 5433:5432
+#    environment:
+#      POSTGRES_USER: propostas
+#      POSTGRES_PASSWORD: password
+#      POSTGRES_DB: dev_proposta
+
+
+
+  propostas:
+    image: arielalvesdutra/propostas
+    ports:
+      - 8080:8080
+    environment:
+      SERVER_PORT: 8080
+      ANALISE_URL: http://localhost:9999
+      CARTAO_URL: http://localhost:8888
+      DATABASE_PORT: 5433
+      DATABASE_USER: propostas
+#      ANALISE_URL: analise
+#      CARTAO_URL: cartao
+#    depends_on:
+#      - keycloak
+#      - propostas-db
+
