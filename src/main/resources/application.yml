@@ -54,7 +54,7 @@ spring:
 ## OpenTracing
 opentracing:
   jaeger:
-    enabled: ${JAEGER_ENABLED:false}
+    enabled: ${JAEGER_ENABLED:true}
     service-name: ${spring.application.name:propostas}
     http-sender-url: ${JAEGER_ENDPOINT:http://localhost:14628/api/traces}
     probabilistic-sampler:
